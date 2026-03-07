@@ -760,7 +760,7 @@ npm run dev
 **Your Name**
 
 - GitHub: [@zaidalam29](https://github.com/zaidalam29)
-- Email: your.email@example.com
+- Email: zaidalam29@gmail.com
 
 ---
 
