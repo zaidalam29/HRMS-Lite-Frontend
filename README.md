@@ -755,6 +755,11 @@ npm run dev
 
 ---
 
+## Backend git url
+```bash
+git clone https://github.com/zaidalam29/HRMS-Lite.git
+```
+---
 ## Author
 
 **Your Name**
