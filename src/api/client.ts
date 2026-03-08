@@ -67,7 +67,7 @@ apiClient.interceptors.response.use(
     if (import.meta.env.DEV && response.config.metadata) {
       const endTime = new Date().getTime();
       const duration = endTime - (response.config.metadata?.startTime || endTime);
-      console.log(`✅ API Response: ${response.config.method?.toUpperCase()} ${response.config.url} - ${duration}ms`);
+      console.log(`API Response: ${response.config.method?.toUpperCase()} ${response.config.url} - ${duration}ms`);
     }
     return response;
   },

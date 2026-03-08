@@ -14,7 +14,7 @@ export const Modal: React.FC<ModalProps> = ({
   onClose,
   title,
   children,
-  size = 'md',  // ✅ Use the size prop
+  size = 'md',  // Use the size prop
 }) => {
   useEffect(() => {
     const handleEscape = (e: KeyboardEvent) => {
@@ -36,7 +36,7 @@ export const Modal: React.FC<ModalProps> = ({
 
   if (!isOpen) return null;
 
-  // ✅ Use the size prop
+  // Use the size prop
   const sizeClasses = {
     sm: 'max-w-md',
     md: 'max-w-lg',

@@ -29,16 +29,16 @@ A modern, production-ready React frontend for Human Resource Management System L
 HRMS Lite Frontend is a React-based single-page application that provides a professional user interface for managing employees and tracking attendance. It integrates seamlessly with the FastAPI backend.
 
 ### Key Features Implemented
-- ✅ Employee Management (CRUD operations)
-- ✅ Attendance Tracking
-- ✅ Auto-generated Employee IDs
-- ✅ Responsive Design
-- ✅ Error Handling with Toast Notifications
-- ✅ Loading States
-- ✅ Form Validation
-- ✅ Confirmation Dialogs
-- ✅ Filtering and Search
-- ✅ Attendance Summary Dashboard
+- Employee Management (CRUD operations)
+- Attendance Tracking
+- Auto-generated Employee IDs
+- Responsive Design
+- Error Handling with Toast Notifications
+- Loading States
+- Form Validation
+- Confirmation Dialogs
+- Filtering and Search
+- Attendance Summary Dashboard
 
 ---
 

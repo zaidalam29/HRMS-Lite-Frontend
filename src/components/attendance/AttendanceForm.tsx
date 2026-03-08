@@ -36,8 +36,8 @@ export const AttendanceForm: React.FC<AttendanceFormProps> = ({
     register,
     handleSubmit,
     formState: { errors },
-    setValue,
     watch,
+    // Remove setValue completely - it's not being used
   } = useForm<AttendanceFormData>({
     resolver: zodResolver(attendanceSchema),
     defaultValues: initialData || {

@@ -1,3 +1,5 @@
+// Fix for Vite environment variables with proper type consistency
+
 export const DEPARTMENTS = [
   'Engineering',
   'Marketing',
@@ -9,18 +11,21 @@ export const DEPARTMENTS = [
 
 export const ATTENDANCE_STATUS = ['Present', 'Absent'] as const;
 
+// Single declaration with all properties
 declare global {
   interface ImportMeta {
     env: {
+      DEV: boolean;
       VITE_API_URL?: string;
       VITE_APP_NAME?: string;
+      [key: string]: any; // Allow other properties
     };
   }
 }
 
-export const API_BASE_URL = (import.meta as any).env?.VITE_API_URL || 'http://localhost:8000';
+export const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:8000';
 
-export const APP_NAME = (import.meta as any).env?.VITE_APP_NAME || 'HRMS Lite';
+export const APP_NAME = import.meta.env.VITE_APP_NAME || 'HRMS Lite';
 
 export const PAGINATION = {
   DEFAULT_PAGE_SIZE: 10,
@@ -33,8 +38,6 @@ export const DATE_FORMATS = {
   API: 'yyyy-MM-dd',
   API_WITH_TIME: "yyyy-MM-dd'T'HH:mm:ss",
 };
-
-// ... rest remains the same
 
 export const ERROR_MESSAGES = {
   NETWORK_ERROR: 'Network error. Please check your connection.',
