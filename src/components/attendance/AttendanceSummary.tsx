@@ -34,9 +34,7 @@ export const AttendanceSummary: React.FC<AttendanceSummaryProps> = ({
     ? Math.round((summary.total_present / summary.total_records) * 100)
     : 0;
 
-  const absentPercentage = summary.total_records > 0
-    ? Math.round((summary.total_absent / summary.total_records) * 100)
-    : 0;
+ 
 
   return (
     <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">

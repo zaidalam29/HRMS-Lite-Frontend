@@ -2,7 +2,7 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
-import { EmployeeCreate, EmployeeUpdate, Department } from '../../types';
+import { EmployeeCreate, Department } from '../../types';
 import { LoadingSpinner } from '../common/LoadingSpinner';
 
 const employeeSchema = z.object({

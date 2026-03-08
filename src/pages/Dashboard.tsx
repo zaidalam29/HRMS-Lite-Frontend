@@ -12,9 +12,8 @@ export const Dashboard: React.FC = () => {
   const [todayStats, setTodayStats] = useState({ present: 0, absent: 0, total: 0 });
 
   useEffect(() => {
-    // Fetch today's attendance
-    const today = format(new Date(), 'yyyy-MM-dd');
-    fetchAttendance({ date: today });
+  
+    fetchAttendance({});
   }, [fetchAttendance]);
 
   useEffect(() => {

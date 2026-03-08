@@ -1,4 +1,4 @@
-import { createSlice, createAsyncThunk, PayloadAction } from '@reduxjs/toolkit';
+import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import { employeeApi } from '../../api/employees';
 import { Employee, EmployeeCreate, EmployeeUpdate } from '../../types';
 

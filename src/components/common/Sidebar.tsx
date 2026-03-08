@@ -5,8 +5,6 @@ import {
   Users, 
   CalendarCheck, 
   Settings,
-  ChevronLeft,
-  ChevronRight
 } from 'lucide-react';
 
 interface SidebarProps {

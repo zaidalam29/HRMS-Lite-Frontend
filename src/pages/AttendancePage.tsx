@@ -10,7 +10,6 @@ import { useEmployees } from '../hooks/useEmployees';
 import { Attendance, AttendanceCreate } from '../types';
 import { Modal } from '../components/common/Modal';
 import { ErrorMessage } from '../components/common/ErrorMessage';
-import { LoadingSpinner } from '../components/common/LoadingSpinner';
 import { format } from 'date-fns';
 
 export const AttendancePage: React.FC = () => {
@@ -18,7 +17,7 @@ export const AttendancePage: React.FC = () => {
   const [showForm, setShowForm] = useState(false);
   const [editingRecord, setEditingRecord] = useState<Attendance | null>(null);
   const [filters, setFilters] = useState<FilterValues>({});
-  const [selectedEmployeeId, setSelectedEmployeeId] = useState<string>(''); // Fix: Initialize as empty string
+  const [selectedEmployeeId, setSelectedEmployeeId] = useState<string>('');
   const [dateRange, setDateRange] = useState<{ start?: string; end?: string }>({});
 
   const {

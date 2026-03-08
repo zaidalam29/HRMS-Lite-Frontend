@@ -6,7 +6,6 @@ import { EmployeeForm } from '../components/employees/EmployeeForm';
 import { useEmployees } from '../hooks/useEmployees';
 import { Employee, EmployeeCreate } from '../types';
 import { Modal } from '../components/common/Modal';
-import { LoadingSpinner } from '../components/common/LoadingSpinner';
 import { ErrorMessage } from '../components/common/ErrorMessage';
 
 export const EmployeesPage: React.FC = () => {
