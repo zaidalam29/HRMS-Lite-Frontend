@@ -1,6 +1,26 @@
 import axios, { AxiosError, AxiosInstance, InternalAxiosRequestConfig, AxiosResponse } from 'axios';
 import toast from 'react-hot-toast';
 
+// Extend InternalAxiosRequestConfig to include metadata
+declare module 'axios' {
+  export interface InternalAxiosRequestConfig {
+    metadata?: {
+      startTime: number;
+    };
+  }
+}
+
+// Define environment type
+declare global {
+  interface ImportMeta {
+    env: {
+      DEV: boolean;
+      VITE_API_URL?: string;
+      VITE_APP_NAME?: string;
+    };
+  }
+}
+
 export interface ApiErrorResponse {
   message?: string;
   detail?: {
@@ -27,9 +47,9 @@ apiClient.interceptors.request.use(
     const startTime = new Date().getTime();
     config.metadata = { startTime };
     
-    // Log API calls in development
+    // Log API calls in development - using optional chaining to avoid errors
     if (import.meta.env.DEV) {
-      console.log(`API Request: ${config.method?.toUpperCase()} ${config.url}`, config.data);
+      console.log(`🚀 API Request: ${config.method?.toUpperCase()} ${config.url}`, config.data);
     }
     
     return config;
@@ -46,8 +66,8 @@ apiClient.interceptors.response.use(
     // Log response time in development
     if (import.meta.env.DEV && response.config.metadata) {
       const endTime = new Date().getTime();
-      const duration = endTime - response.config.metadata.startTime;
-      console.log(`API Response: ${response.config.method?.toUpperCase()} ${response.config.url} - ${duration}ms`);
+      const duration = endTime - (response.config.metadata?.startTime || endTime);
+      console.log(`✅ API Response: ${response.config.method?.toUpperCase()} ${response.config.url} - ${duration}ms`);
     }
     return response;
   },

@@ -6,7 +6,7 @@ interface ModalProps {
   onClose: () => void;
   title: string;
   children: React.ReactNode;
-  size?: 'sm' | 'md' | 'lg' | 'xl';
+  size?: 'sm' | 'md' | 'lg' | 'xl';  // Keep the prop
 }
 
 export const Modal: React.FC<ModalProps> = ({
@@ -14,7 +14,7 @@ export const Modal: React.FC<ModalProps> = ({
   onClose,
   title,
   children,
-  size = 'md',
+  size = 'md',  // ✅ Use the size prop
 }) => {
   useEffect(() => {
     const handleEscape = (e: KeyboardEvent) => {
@@ -36,6 +36,7 @@ export const Modal: React.FC<ModalProps> = ({
 
   if (!isOpen) return null;
 
+  // ✅ Use the size prop
   const sizeClasses = {
     sm: 'max-w-md',
     md: 'max-w-lg',
@@ -52,8 +53,8 @@ export const Modal: React.FC<ModalProps> = ({
           onClick={onClose}
         />
 
-        {/* Modal panel */}
-        <div className="inline-block overflow-hidden text-left align-bottom transition-all transform bg-white rounded-lg shadow-xl sm:my-8 sm:align-middle sm:w-full sm:max-w-lg">
+        {/* Modal panel - using size prop */}
+        <div className={`inline-block overflow-hidden text-left align-bottom transition-all transform bg-white rounded-lg shadow-xl sm:my-8 sm:align-middle sm:w-full ${sizeClasses[size]}`}>
           <div className="absolute top-0 right-0 pt-4 pr-4">
             <button
               onClick={onClose}

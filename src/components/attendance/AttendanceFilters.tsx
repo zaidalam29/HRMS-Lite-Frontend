@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { format } from 'date-fns';
 import { Filter, X, Calendar, User } from 'lucide-react';
 
 interface AttendanceFiltersProps {
